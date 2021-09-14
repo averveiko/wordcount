@@ -8,19 +8,14 @@ import (
 
 func main() {
 
-	text, ok := readFromArgument()
-	if !ok {
+	if len(os.Args) < 2 {
 		fmt.Println("usage: ./wordcount TEXT")
 		return
 	}
 
-	fmt.Println(len(strings.Fields(text)))
+	fmt.Println(getWordCount(os.Args[1]))
 }
 
-func readFromArgument() (string, bool) {
-	if len(os.Args) < 2 {
-		return "", false
-	}
-
-	return os.Args[1], true
+func getWordCount(text string) int {
+	return len(strings.Fields(text))
 }
