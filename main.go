@@ -17,6 +17,7 @@ func main() {
 	fmt.Println(len(strings.Split(text, " ")))
 }
 
+// read from command line
 func readFromArgument() (string, bool) {
 	if len(os.Args) < 2 {
 		return "", false
