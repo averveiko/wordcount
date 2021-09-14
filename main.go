@@ -22,5 +22,8 @@ func readFromArgument() (string, bool) {
 	if len(os.Args) < 2 {
 		return "", false
 	}
+	if os.Args[1] == "" {
+		return "", false
+	}
 	return os.Args[1], true
 }
