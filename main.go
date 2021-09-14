@@ -10,20 +10,17 @@ func main() {
 
 	text, ok := readFromArgument()
 	if !ok {
-		fmt.Println("0")
+		fmt.Println("usage: ./wordcount TEXT")
 		return
 	}
 
-	fmt.Println(len(strings.Split(text, " ")))
+	fmt.Println(len(strings.Fields(text)))
 }
 
-// read from command line
 func readFromArgument() (string, bool) {
 	if len(os.Args) < 2 {
 		return "", false
 	}
-	if os.Args[1] == "" {
-		return "", false
-	}
+
 	return os.Args[1], true
 }
